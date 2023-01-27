@@ -19,6 +19,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import Checkout from './pages/Checkout';
 import Payment from './pages/Payment';
 import Order from './pages/Order';
+import VerifyEmail from './pages/VerifyEmail';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/checkout' element={ user ? <Checkout /> : <Navigate to='/register' />} />
           <Route path='/payment' element={ user ? <Payment /> : <Navigate to='/register' />} />
           <Route path='/order' element={ user ? <Order /> : <Navigate to='/register' />} />
+          <Route path='/verify-email' element={ <VerifyEmail /> } />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/useTypedSelectors";
 import { registerUsers } from "../features/authSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [email, setEmail] = useState<string>('');
@@ -23,6 +23,8 @@ const Register = () => {
     //redux
     const dispatch = useAppDispatch();
     const { isLoadingRegister, isSuccessRegister, isErrorRegister, isRegisterMessage, user } = useAppSelector((state) => state.auth);
+
+    const navigate = useNavigate();
 
     const resetError = () => {
         setEmailError('');
@@ -80,7 +82,13 @@ const Register = () => {
         const userData = { email, username, password, confirmPassword, gender, checked };
         dispatch(registerUsers(userData));
         resetField();
+
+
+       setTimeout(() => {
+        navigate('/verify-email');
+       }, 3000);
     }
+
 
     return (
         <div className="mb-20">

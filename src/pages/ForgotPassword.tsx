@@ -59,7 +59,6 @@ const ForgotPassword = () => {
             {isErrorForgotEmail && <p className="font-mono text-xs text-red-700 mt-1">{isForgotEmailMessage}</p>}
             {!isErrorForgotEmail && <p className="font-mono text-xs text-black mt-1 animate-pulse">{isForgotEmailMessage}</p>}
             <Link to='/register' className="text-xs font-mono block mt-3">create a new account instead?</Link>
-            
         </div>
         
     )

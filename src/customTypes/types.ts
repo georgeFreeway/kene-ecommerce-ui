@@ -42,6 +42,7 @@ export type UserType = {
     password?: string,
     isAdmin?: boolean,
     verified?: boolean,
+    verificationCode: string
 }
 
 export type registerUserType = {
